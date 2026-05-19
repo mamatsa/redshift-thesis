@@ -1,0 +1,40 @@
+version: 0.2
+
+env:
+  secrets-manager:
+    REDSHIFT_HOST: thesis/redshift:host
+    REDSHIFT_USER: thesis/redshift:user
+    REDSHIFT_PASSWORD: thesis/redshift:password
+    REDSHIFT_DB: thesis/redshift:dbname
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - pip install --upgrade pip
+      - pip install dbt-redshift
+
+  pre_build:
+    commands:
+      - mkdir -p ~/.dbt
+      - |
+        cat > ~/.dbt/profiles.yml <<EOF
+        sales_warehouse:
+          target: prod
+          outputs:
+            prod:
+              type: redshift
+              host: "$REDSHIFT_HOST"
+              user: "$REDSHIFT_USER"
+              password: "$REDSHIFT_PASSWORD"
+              port: 5439
+              dbname: "$REDSHIFT_DB"
+              schema: "analytics"
+              threads: 4
+        EOF
+
+  build:
+    commands:
+      - dbt debug --target prod
+      - dbt build --target prod --full-refresh

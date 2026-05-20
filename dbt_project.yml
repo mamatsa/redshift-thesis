@@ -1,5 +1,6 @@
 name: "sales_warehouse"
-version: "1.0.0"
+version: "1.0.1"
+description: "Sales warehouse dbt project (thesis CI/CD)"
 config-version: 2
 
 profile: "sales_warehouse"

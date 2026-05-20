@@ -1,15 +1,15 @@
-name: "redshift_thesis"
+name: "sales_warehouse"
 version: "1.0.0"
 config-version: 2
 
-profile: "redshift_thesis"
+profile: "sales_warehouse"
 
 model-paths: ["models"]
 seed-paths: ["seeds"]
 test-paths: ["tests"]
 
 models:
-  redshift_thesis:
+  sales_warehouse:
     staging:
       +schema: staging
       +materialized: view

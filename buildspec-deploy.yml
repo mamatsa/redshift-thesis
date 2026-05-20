@@ -2,10 +2,10 @@ version: 0.2
 
 env:
   secrets-manager:
-    REDSHIFT_HOST: thesis/redshift:host
-    REDSHIFT_USER: thesis/redshift:user
-    REDSHIFT_PASSWORD: thesis/redshift:password
-    REDSHIFT_DB: thesis/redshift:dbname
+    REDSHIFT_HOST: thesis/redshift/custom:host
+    REDSHIFT_USER: thesis/redshift/custom:user
+    REDSHIFT_PASSWORD: thesis/redshift/custom:password
+    REDSHIFT_DB: thesis/redshift/custom:dbname
 
 phases:
   install:

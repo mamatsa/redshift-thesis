@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw_sales
+    schema: analytics_raw
+    tables:
+      - name: customers
+      - name: products
+      - name: orders

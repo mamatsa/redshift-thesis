@@ -37,4 +37,4 @@ phases:
   build:
     commands:
       - dbt debug --target prod
-      - dbt build --target prod --full-refresh
+      - dbt build --target prod

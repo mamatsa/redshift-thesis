@@ -37,4 +37,4 @@ phases:
   build:
     commands:
       - dbt debug --target ci
-      - dbt build --target ci --full-refresh
+      - dbt build --target ci

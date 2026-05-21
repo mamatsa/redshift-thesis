@@ -5,12 +5,7 @@ config-version: 2
 profile: "sales_warehouse"
 
 model-paths: ["models"]
-seed-paths: ["seeds"]
 test-paths: ["tests"]
-
-seeds:
-  sales_warehouse:
-    +schema: raw
 
 models:
   sales_warehouse:
